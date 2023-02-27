@@ -1,12 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const parityCheck = () => {
-  console.log('Welcome to the Brain Games!');
-
-  const name = readlineSync.question('May I have your name? ');
-
-  console.log(`Hello, ${name}!`);
-
+const parityCheck = (name) => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   const getRandomInt = () => Math.floor(Math.random() * 100);

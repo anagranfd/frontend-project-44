@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import parityCheck from '../src/parity-check.js';
+import { brainEven } from '../src/index.js';
 
-parityCheck();
+brainEven();
