@@ -1,13 +1,7 @@
-import readlineSync from 'readline-sync';
+import greetings from './games/cli.js';
 import { doCalcIteration, printFinishLog } from './games/calc-check.js';
+import { doCalcGCDIteration, printGCDFinishLog } from './games/gcd-check.js';
 import parityCheck from './games/parity-check.js';
-
-const greetings = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  return name;
-};
 
 const brainCalc = () => {
   const userName = greetings();
@@ -20,5 +14,11 @@ const brainEven = () => {
   parityCheck(userName);
 };
 
+const brainGcd = () => {
+  const userName = greetings();
+  doCalcGCDIteration();
+  printGCDFinishLog(userName);
+};
+
 export default greetings;
-export { brainCalc, brainEven };
+export { brainCalc, brainEven, brainGcd };

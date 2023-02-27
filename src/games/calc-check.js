@@ -48,10 +48,10 @@ const calculation = () => {
 
   console.log(`Question: ${firstInt} ${operator} ${secondInt}`);
 
-  const userAnswerStr = readlineSync.question('Your answer: ');
-  userAnswer = Number(userAnswerStr);
+  userAnswer = readlineSync.question('Your answer: ');
+  const userAnswerStr = Number(userAnswer);
 
-  if (userAnswer === rightAnswer) {
+  if (userAnswerStr === rightAnswer) {
     calculationCheck = true;
   } else calculationCheck = false;
 };
@@ -79,7 +79,7 @@ const doCalcIteration = () => {
 const printFinishLog = (name) => {
   if (calculationCheck === false) {
     console.log(
-      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`
+      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
     );
     console.log(`Let's try again, ${name}!`);
     return;
