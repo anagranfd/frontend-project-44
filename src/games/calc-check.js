@@ -54,24 +54,8 @@ const calculation = () => {
   if (userAnswerStr === rightAnswer) {
     calculationCheck = true;
   } else calculationCheck = false;
-};
 
-// print userAnswerLog
-
-const userAnswerLog = () => {
-  if (calculationCheck === true) {
-    console.log('Correct!');
-  }
-};
-
-// do calc iterations
-
-const doCalcIteration = () => {
-  calculationCheck = true;
-  for (let i = 0; i < 3 && calculationCheck === true; i += 1) {
-    calculation();
-    userAnswerLog();
-  }
+  return calculationCheck;
 };
 
 // printFinishLog
@@ -79,7 +63,7 @@ const doCalcIteration = () => {
 const printFinishLog = (name) => {
   if (calculationCheck === false) {
     console.log(
-      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
+      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`
     );
     console.log(`Let's try again, ${name}!`);
     return;
@@ -87,6 +71,6 @@ const printFinishLog = (name) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-// export doCalcIteration, printFinishLog
+// export calculation, printFinishLog
 
-export { doCalcIteration, printFinishLog };
+export { printFinishLog, calculation };

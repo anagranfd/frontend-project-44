@@ -59,24 +59,8 @@ const gcd = () => {
   if (userAnswerStr === rightAnswer) {
     calculationCheck = true;
   } else calculationCheck = false;
-};
 
-// print userAnswerLog
-
-const userAnswerLog = () => {
-  if (calculationCheck === true) {
-    console.log('Correct!');
-  }
-};
-
-// do calc iterations
-
-const doCalcGCDIteration = () => {
-  calculationCheck = true;
-  for (let i = 0; i < 3 && calculationCheck === true; i += 1) {
-    gcd();
-    userAnswerLog();
-  }
+  return calculationCheck;
 };
 
 // printGCDFinishLog
@@ -84,7 +68,7 @@ const doCalcGCDIteration = () => {
 const printGCDFinishLog = (name) => {
   if (calculationCheck === false) {
     console.log(
-      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
+      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`
     );
     console.log(`Let's try again, ${name}!`);
     return;
@@ -94,4 +78,4 @@ const printGCDFinishLog = (name) => {
 
 // export doCalcGCDIteration, printGCDFinishLog
 
-export { doCalcGCDIteration, printGCDFinishLog };
+export { gcd, printGCDFinishLog };
