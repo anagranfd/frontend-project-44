@@ -1,6 +1,7 @@
 import greetings from './games/cli.js';
 import { printFinishLog } from './games/calc-check.js';
 import { printGCDFinishLog } from './games/gcd-check.js';
+import { printProgressionFinishLog } from './games/progression-check.js';
 import parityCheck from './games/parity-check.js';
 
 const iteration = (calcFunc) => {
@@ -30,5 +31,13 @@ const brainGcd = (calcFunc) => {
   printGCDFinishLog(userName);
 };
 
+const brainProgression = (calcFunc) => {
+  const userName = greetings();
+  iteration(calcFunc);
+  printProgressionFinishLog(userName);
+};
+
 export default greetings;
-export { brainCalc, brainEven, brainGcd };
+export {
+  brainCalc, brainEven, brainGcd, brainProgression,
+};

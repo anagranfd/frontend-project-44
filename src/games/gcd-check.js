@@ -68,7 +68,7 @@ const gcd = () => {
 const printGCDFinishLog = (name) => {
   if (calculationCheck === false) {
     console.log(
-      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`
+      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
     );
     console.log(`Let's try again, ${name}!`);
     return;
