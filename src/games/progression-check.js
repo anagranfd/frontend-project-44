@@ -26,7 +26,7 @@ const calcProgression = () => {
   const uncompletedProgression = [...progression];
   uncompletedProgression[missingIntIndex] = '..';
 
-  console.log(`Question: ${uncompletedProgression}`);
+  console.log(`Question: ${uncompletedProgression.join(' ')}`);
 
   rightAnswer = progression[missingIntIndex];
 

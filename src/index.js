@@ -50,4 +50,6 @@ const brainPrime = (calcFunc) => {
 };
 
 export default greetings;
-export { brainCalc, brainEven, brainGcd, brainProgression, brainPrime };
+export {
+  brainCalc, brainEven, brainGcd, brainProgression, brainPrime,
+};
