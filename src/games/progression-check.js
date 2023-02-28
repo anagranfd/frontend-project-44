@@ -5,10 +5,6 @@ let userAnswer;
 
 let calculationCheck;
 
-const instructProgression = () => {
-  console.log('What number is missing in the progression?');
-};
-
 const calcProgression = () => {
   const getRandomInt = () => Math.floor(Math.random() * 10);
 
@@ -39,22 +35,14 @@ const calcProgression = () => {
 
   if (userAnswerStr === rightAnswer) {
     calculationCheck = true;
-  } else calculationCheck = false;
+  } else {
+    calculationCheck = false;
+    console.log(
+      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
+    );
+  }
 
   return calculationCheck;
 };
 
-// printProgressionFinishLog
-
-const printProgressionFinishLog = (name) => {
-  if (calculationCheck === false) {
-    console.log(
-      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
-    );
-    console.log(`Let's try again, ${name}!`);
-    return;
-  }
-  console.log(`Congratulations, ${name}!`);
-};
-
-export { calcProgression, printProgressionFinishLog, instructProgression };
+export default calcProgression;

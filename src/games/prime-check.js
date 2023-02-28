@@ -5,10 +5,6 @@ let userAnswer;
 
 let calculationCheck;
 
-const instructPrime = () => {
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-};
-
 const calcPrime = () => {
   const randomInt = Math.floor(Math.random() * 100);
 
@@ -41,22 +37,14 @@ const calcPrime = () => {
 
   if (userAnswer === rightAnswer) {
     calculationCheck = true;
-  } else calculationCheck = false;
+  } else {
+    calculationCheck = false;
+    console.log(
+      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
+    );
+  }
 
   return calculationCheck;
 };
 
-// printPrimeFinishLog
-
-const printPrimeFinishLog = (name) => {
-  if (calculationCheck === false) {
-    console.log(
-      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
-    );
-    console.log(`Let's try again, ${name}!`);
-    return;
-  }
-  console.log(`Congratulations, ${name}!`);
-};
-
-export { calcPrime, printPrimeFinishLog, instructPrime };
+export default calcPrime;

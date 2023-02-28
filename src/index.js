@@ -1,14 +1,14 @@
 import greetings from './games/cli.js';
-import { parityCheck, instructParity } from './games/parity-check.js';
-import { printFinishLog } from './games/calc-check.js';
-import { printGCDFinishLog, instructGcd } from './games/gcd-check.js';
-import {
-  printProgressionFinishLog,
-  instructProgression,
-} from './games/progression-check.js';
-import { printPrimeFinishLog, instructPrime } from './games/prime-check.js';
 
-const iteration = (calcFunc) => {
+const printFinishLog = (name, calculationCheck) => {
+  if (calculationCheck === false) {
+    console.log(`Let's try again, ${name}!`);
+    return;
+  }
+  console.log(`Congratulations, ${name}!`);
+};
+
+const iteration = (calcFunc, name) => {
   let calculationCheck = true;
   for (let i = 0; i < 3 && calculationCheck === true; i += 1) {
     calculationCheck = calcFunc();
@@ -16,39 +16,36 @@ const iteration = (calcFunc) => {
       console.log('Correct!');
     }
   }
+  printFinishLog(name, calculationCheck);
 };
 
 const brainCalc = (calcFunc) => {
   const userName = greetings();
-  iteration(calcFunc);
-  printFinishLog(userName);
+  iteration(calcFunc, userName);
 };
 
-const brainEven = () => {
+const brainEven = (calcFunc) => {
   const userName = greetings();
-  instructParity();
-  parityCheck(userName);
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  iteration(calcFunc, userName);
 };
 
 const brainGcd = (calcFunc) => {
   const userName = greetings();
-  instructGcd();
-  iteration(calcFunc);
-  printGCDFinishLog(userName);
+  console.log('Find the greatest common divisor of given numbers.');
+  iteration(calcFunc, userName);
 };
 
 const brainProgression = (calcFunc) => {
   const userName = greetings();
-  instructProgression();
-  iteration(calcFunc);
-  printProgressionFinishLog(userName);
+  console.log('What number is missing in the progression?');
+  iteration(calcFunc, userName);
 };
 
 const brainPrime = (calcFunc) => {
   const userName = greetings();
-  instructPrime();
-  iteration(calcFunc);
-  printPrimeFinishLog(userName);
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  iteration(calcFunc, userName);
 };
 
 export default greetings;

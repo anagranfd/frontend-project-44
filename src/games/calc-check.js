@@ -53,24 +53,16 @@ const calculation = () => {
 
   if (userAnswerStr === rightAnswer) {
     calculationCheck = true;
-  } else calculationCheck = false;
+  } else {
+    calculationCheck = false;
+    console.log(
+      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
+    );
+  }
 
   return calculationCheck;
 };
 
-// printFinishLog
+// export calculation
 
-const printFinishLog = (name) => {
-  if (calculationCheck === false) {
-    console.log(
-      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
-    );
-    console.log(`Let's try again, ${name}!`);
-    return;
-  }
-  console.log(`Congratulations, ${name}!`);
-};
-
-// export calculation, printFinishLog
-
-export { printFinishLog, calculation };
+export default calculation;

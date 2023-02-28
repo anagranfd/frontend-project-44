@@ -10,10 +10,6 @@ let calculationCheck;
 // calc rightAnswer
 // calc calculationCheck value
 
-const instructGcd = () => {
-  console.log('Find the greatest common divisor of given numbers.');
-};
-
 const gcd = () => {
   const getRandomInt = () => Math.floor(Math.random() * 100);
 
@@ -61,24 +57,16 @@ const gcd = () => {
 
   if (userAnswerStr === rightAnswer) {
     calculationCheck = true;
-  } else calculationCheck = false;
+  } else {
+    calculationCheck = false;
+    console.log(
+      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
+    );
+  }
 
   return calculationCheck;
 };
 
-// printGCDFinishLog
+// export gcd
 
-const printGCDFinishLog = (name) => {
-  if (calculationCheck === false) {
-    console.log(
-      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
-    );
-    console.log(`Let's try again, ${name}!`);
-    return;
-  }
-  console.log(`Congratulations, ${name}!`);
-};
-
-// export doCalcGCDIteration, printGCDFinishLog
-
-export { gcd, printGCDFinishLog, instructGcd };
+export default gcd;
