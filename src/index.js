@@ -21,6 +21,7 @@ const iteration = (calcFunc, name) => {
 
 const brainCalc = (calcFunc) => {
   const userName = greetings();
+  console.log('What is the result of the expression?');
   iteration(calcFunc, userName);
 };
 
@@ -49,6 +50,4 @@ const brainPrime = (calcFunc) => {
 };
 
 export default greetings;
-export {
-  brainCalc, brainEven, brainGcd, brainProgression, brainPrime,
-};
+export { brainCalc, brainEven, brainGcd, brainProgression, brainPrime };
