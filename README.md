@@ -6,10 +6,10 @@
 
 [asciinema.org brain-even](https://asciinema.org/a/gJx78LPscfwkwgo4brLLHLh93)
 
-[asciinema.org brain-calc](https://asciinema.org/a/jatIQV4H9Ht0fOGW6XVN4gL2k)
+[asciinema.org brain-calc](https://asciinema.org/a/siCC7VMTwR4ZSza3mP8AZe5hy)
 
 [asciinema.org brain-gcd](https://asciinema.org/a/zfz5brjEfN8wcxfcZeGidUoFi)
 
-[asciinema.org brain-progression](https://asciinema.org/a/6LXkTcQnM51Huh9pqMSWyXPV0)
+[asciinema.org brain-progression](https://asciinema.org/a/DMkG8vY3zQGlKjQ7rAUEyc2iJ)
 
 [asciinema.org brain-prime](https://asciinema.org/a/nyN3PeeDkZk9uKvs9ze2yDAB0)
