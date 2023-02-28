@@ -10,8 +10,11 @@ let calculationCheck;
 // calc rightAnswer
 // calc calculationCheck value
 
-const gcd = () => {
+const instructGcd = () => {
   console.log('Find the greatest common divisor of given numbers.');
+};
+
+const gcd = () => {
   const getRandomInt = () => Math.floor(Math.random() * 100);
 
   let firstInt;
@@ -78,4 +81,4 @@ const printGCDFinishLog = (name) => {
 
 // export doCalcGCDIteration, printGCDFinishLog
 
-export { gcd, printGCDFinishLog };
+export { gcd, printGCDFinishLog, instructGcd };

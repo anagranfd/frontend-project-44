@@ -1,8 +1,12 @@
 import greetings from './games/cli.js';
+import { parityCheck, instructParity } from './games/parity-check.js';
 import { printFinishLog } from './games/calc-check.js';
-import { printGCDFinishLog } from './games/gcd-check.js';
-import { printProgressionFinishLog } from './games/progression-check.js';
-import parityCheck from './games/parity-check.js';
+import { printGCDFinishLog, instructGcd } from './games/gcd-check.js';
+import {
+  printProgressionFinishLog,
+  instructProgression,
+} from './games/progression-check.js';
+import { printPrimeFinishLog, instructPrime } from './games/prime-check.js';
 
 const iteration = (calcFunc) => {
   let calculationCheck = true;
@@ -22,22 +26,32 @@ const brainCalc = (calcFunc) => {
 
 const brainEven = () => {
   const userName = greetings();
+  instructParity();
   parityCheck(userName);
 };
 
 const brainGcd = (calcFunc) => {
   const userName = greetings();
+  instructGcd();
   iteration(calcFunc);
   printGCDFinishLog(userName);
 };
 
 const brainProgression = (calcFunc) => {
   const userName = greetings();
+  instructProgression();
   iteration(calcFunc);
   printProgressionFinishLog(userName);
 };
 
+const brainPrime = (calcFunc) => {
+  const userName = greetings();
+  instructPrime();
+  iteration(calcFunc);
+  printPrimeFinishLog(userName);
+};
+
 export default greetings;
 export {
-  brainCalc, brainEven, brainGcd, brainProgression,
+  brainCalc, brainEven, brainGcd, brainProgression, brainPrime,
 };

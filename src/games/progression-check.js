@@ -5,8 +5,11 @@ let userAnswer;
 
 let calculationCheck;
 
-const calcProgression = () => {
+const instructProgression = () => {
   console.log('What number is missing in the progression?');
+};
+
+const calcProgression = () => {
   const getRandomInt = () => Math.floor(Math.random() * 10);
 
   let int = getRandomInt();
@@ -54,4 +57,4 @@ const printProgressionFinishLog = (name) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export { calcProgression, printProgressionFinishLog };
+export { calcProgression, printProgressionFinishLog, instructProgression };

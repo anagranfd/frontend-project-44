@@ -1,8 +1,10 @@
 import readlineSync from 'readline-sync';
 
-const parityCheck = (name) => {
+const instructParity = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
+};
 
+const parityCheck = (name) => {
   const getRandomInt = () => Math.floor(Math.random() * 100);
 
   for (let i = 0; i < 3; i += 1) {
@@ -26,4 +28,4 @@ const parityCheck = (name) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export default parityCheck;
+export { parityCheck, instructParity };
