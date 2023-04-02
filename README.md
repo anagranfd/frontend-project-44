@@ -1,3 +1,32 @@
+## Brain-games
+
+#### Desctiption
+
+Brain Games - a set of five console games designed based on popular mobile brain training apps.
+
+#### Installation
+
+```
+make install
+```
+
+#### How to play
+
+**Launch one of the games using the following commands:**
+
+`brain-even` - A random number will be shown to the user. They need to answer yes if the number is even, or no if it is odd.\
+`brain-calc` - A random math expression, such as 35 + 16, will be shown to the user. They need to calculate and provide the correct answer.\
+`brain-gcd` - Two random numbers, such as 25 50, will be shown to the user. They need to calculate and provide the greatest common divisor of these numbers.\
+`brain-progression` - A series of numbers forming an arithmetic progression will be shown to the user, with one number replaced by two dots. The user needs to determine this number.\
+`brain-prime` - A random number will be shown to the user. They need to answer yes if the number is prime, or no if it is not.\
+
+The game will ask the player to enter their name.\
+Then the game will ask the player a question.\
+If the answer is correct, the game will continue.\
+If the answer is incorrect, the game will end.\
+The player must answer correctly 3 times in a row.\
+After that, the game will end.
+
 ### Hexlet tests and linter status:
 
 [![Actions Status](https://github.com/anagranfd/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/anagranfd/frontend-project-44/actions)
