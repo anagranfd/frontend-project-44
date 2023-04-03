@@ -1,32 +1,18 @@
 import readlineSync from 'readline-sync';
+import launchGame from '../index.js';
+import getRandomInt from '../getRandomInt.js';
 
-let rightAnswer;
-let userAnswer;
-
-let calculationCheck;
-
-const parityCheck = () => {
-  const getRandomInt = () => Math.floor(Math.random() * 100);
-
-  const integer = getRandomInt();
-  const calcRightAnswer = () => {
-    if (integer % 2 === 0) {
-      rightAnswer = 'yes';
-    } else rightAnswer = 'no';
-  };
-
-  calcRightAnswer();
-  console.log(rightAnswer);
+const parityCheck = (integer = getRandomInt()) => {
+  const rightAnswer = integer % 2 === 0 ? 'yes' : 'no';
 
   console.log(`Question: ${integer}`);
 
-  userAnswer = readlineSync.question('Your answer: ');
+  const userAnswer = readlineSync.question('Your answer: ');
 
   if (userAnswer === rightAnswer) {
-    calculationCheck = true;
-  } else calculationCheck = false;
-
-  return calculationCheck;
+    return true;
+  }
+  return false;
 };
 
-export default parityCheck;
+export default (description) => launchGame(parityCheck, description);

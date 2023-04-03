@@ -1,13 +1,8 @@
 import readlineSync from 'readline-sync';
+import launchGame from '../index.js';
+import getRandomInt from '../getRandomInt.js';
 
-let rightAnswer;
-let userAnswer;
-
-let calculationCheck;
-
-const calcPrime = () => {
-  const randomInt = Math.floor(Math.random() * 100);
-
+const calcPrime = (randomInt = getRandomInt()) => {
   let divisor;
 
   const checkIfPrime = () => {
@@ -25,26 +20,20 @@ const calcPrime = () => {
 
   checkIfPrime();
 
-  if (divisor > 1 || divisor === 0) {
-    rightAnswer = 'no';
-  } else {
-    rightAnswer = 'yes';
-  }
+  const rightAnswer = divisor > 1 || divisor === 0 ? 'no' : 'yes';
 
   console.log(`Question: ${randomInt}`);
 
-  userAnswer = readlineSync.question('Your answer: ');
+  const userAnswer = readlineSync.question('Your answer: ');
 
   if (userAnswer === rightAnswer) {
-    calculationCheck = true;
-  } else {
-    calculationCheck = false;
-    console.log(
-      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
-    );
+    return true;
   }
+  console.log(
+    `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
+  );
 
-  return calculationCheck;
+  return false;
 };
 
-export default calcPrime;
+export default (description) => launchGame(calcPrime, description);

@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import launchGame from '../src/index.js';
-import calcPrime from '../src/games/prime-check.js';
+import launchGame from '../src/games/prime-check.js';
 
-launchGame(calcPrime);
+launchGame('Answer "yes" if given number is prime. Otherwise answer "no".');

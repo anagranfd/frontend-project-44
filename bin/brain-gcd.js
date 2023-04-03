@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import launchGame from '../src/index.js';
-import gcd from '../src/games/gcd-check.js';
+import launchGame from '../src/games/gcd-check.js';
 
-launchGame(gcd);
+launchGame('Find the greatest common divisor of given numbers.');

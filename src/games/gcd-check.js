@@ -1,18 +1,8 @@
 import readlineSync from 'readline-sync';
+import launchGame from '../index.js';
+import getRandomInteger from '../getRandomInt.js';
 
-let rightAnswer;
-let userAnswer;
-
-let calculationCheck;
-
-// calc arguments and operator
-// ask user about userAnswer
-// calc rightAnswer
-// calc calculationCheck value
-
-const gcd = () => {
-  const getRandomInt = () => Math.floor(Math.random() * 100);
-
+const gcd = (getRandomInt = getRandomInteger) => {
   let firstInt;
   let secondInt;
 
@@ -39,6 +29,8 @@ const gcd = () => {
 
   calcBiggerInt();
 
+  let rightAnswer;
+
   if (biggerInt % smallerInt === 0) {
     rightAnswer = smallerInt;
   } else {
@@ -52,21 +44,17 @@ const gcd = () => {
 
   console.log(`Question: ${firstInt} ${secondInt}`);
 
-  userAnswer = readlineSync.question('Your answer: ');
+  const userAnswer = readlineSync.question('Your answer: ');
   const userAnswerStr = Number(userAnswer);
 
   if (userAnswerStr === rightAnswer) {
-    calculationCheck = true;
-  } else {
-    calculationCheck = false;
-    console.log(
-      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
-    );
+    return true;
   }
+  console.log(
+    `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
+  );
 
-  return calculationCheck;
+  return false;
 };
 
-// export gcd
-
-export default gcd;
+export default (description) => launchGame(gcd, description);

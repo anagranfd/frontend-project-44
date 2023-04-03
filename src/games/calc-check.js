@@ -1,21 +1,8 @@
 import readlineSync from 'readline-sync';
+import launchGame from '../index.js';
+import getRandomInt from '../getRandomInt.js';
 
-let rightAnswer;
-let userAnswer;
-
-let calculationCheck;
-
-// calc arguments and operator
-// ask user about userAnswer
-// calc rightAnswer
-// calc calculationCheck value
-
-const calculation = () => {
-  const getRandomInt = () => Math.floor(Math.random() * 100);
-
-  const firstInt = getRandomInt();
-  const secondInt = getRandomInt();
-
+const calculation = (firstInt = getRandomInt(), secondInt = getRandomInt()) => {
   const countArithmOperationIndex = () => {
     let operationPosition = Math.floor(Math.random() * 10);
     while (operationPosition > 3 || operationPosition === 0) {
@@ -36,7 +23,7 @@ const calculation = () => {
     return multiplication;
   };
 
-  rightAnswer = calcRightAnswer();
+  const rightAnswer = calcRightAnswer();
 
   const calcOperator = () => {
     if (arithmOperationIndex === 0) return '+';
@@ -48,21 +35,17 @@ const calculation = () => {
 
   console.log(`Question: ${firstInt} ${operator} ${secondInt}`);
 
-  userAnswer = readlineSync.question('Your answer: ');
+  const userAnswer = readlineSync.question('Your answer: ');
   const userAnswerStr = Number(userAnswer);
 
   if (userAnswerStr === rightAnswer) {
-    calculationCheck = true;
-  } else {
-    calculationCheck = false;
-    console.log(
-      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
-    );
+    return true;
   }
+  console.log(
+    `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
+  );
 
-  return calculationCheck;
+  return false;
 };
 
-// export calculation
-
-export default calculation;
+export default (description) => launchGame(calculation, description);

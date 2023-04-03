@@ -1,14 +1,9 @@
 import readlineSync from 'readline-sync';
+import launchGame from '../index.js';
+import getRandomInt from '../getRandomInt.js';
 
-let rightAnswer;
-let userAnswer;
-
-let calculationCheck;
-
-const calcProgression = () => {
-  const getRandomInt = () => Math.floor(Math.random() * 10);
-
-  let int = getRandomInt();
+const calcProgression = (integer = getRandomInt()) => {
+  let int = integer;
   const step = Math.ceil(Math.random() * 10);
   const missingIntIndex = Math.floor(Math.random() * 10);
 
@@ -28,21 +23,19 @@ const calcProgression = () => {
 
   console.log(`Question: ${uncompletedProgression.join(' ')}`);
 
-  rightAnswer = progression[missingIntIndex];
+  const rightAnswer = progression[missingIntIndex];
 
-  userAnswer = readlineSync.question('Your answer: ');
+  const userAnswer = readlineSync.question('Your answer: ');
   const userAnswerStr = Number(userAnswer);
 
   if (userAnswerStr === rightAnswer) {
-    calculationCheck = true;
-  } else {
-    calculationCheck = false;
-    console.log(
-      `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
-    );
+    return true;
   }
+  console.log(
+    `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
+  );
 
-  return calculationCheck;
+  return false;
 };
 
-export default calcProgression;
+export default (description) => launchGame(calcProgression, description);

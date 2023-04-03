@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import launchGame from '../src/index.js';
-import calcProgression from '../src/games/progression-check.js';
+import launchGame from '../src/games/progression-check.js';
 
-launchGame(calcProgression);
+launchGame('What number is missing in the progression?');
