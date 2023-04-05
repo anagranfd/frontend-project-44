@@ -1,60 +1,41 @@
-import readlineSync from 'readline-sync';
 import launchGame from '../index.js';
-import getRandomInteger from '../getRandomInt.js';
+import getRandomInt from '../getRandomInt.js';
 
-const gcd = (getRandomInt = getRandomInteger) => {
-  let firstInt;
-  let secondInt;
+const gcd = (
+  firstInt = getRandomInt(1, 100),
+  secondInt = getRandomInt(1, 100),
+) => {
+  const calcRightAnswer = () => {
+    let biggerInt;
+    let smallerInt;
 
-  const calcInitIntegers = () => {
-    firstInt = getRandomInt();
-    secondInt = getRandomInt();
-    if (firstInt === 0 || secondInt === 0) calcInitIntegers();
-  };
+    const calcBiggerInt = () => {
+      if (firstInt >= secondInt) {
+        biggerInt = firstInt;
+        smallerInt = secondInt;
+      } else {
+        biggerInt = secondInt;
+        smallerInt = firstInt;
+      }
+    };
 
-  calcInitIntegers();
+    calcBiggerInt();
 
-  let biggerInt;
-  let smallerInt;
-
-  const calcBiggerInt = () => {
-    if (firstInt >= secondInt) {
-      biggerInt = firstInt;
-      smallerInt = secondInt;
-    } else {
-      biggerInt = secondInt;
-      smallerInt = firstInt;
+    if (biggerInt % smallerInt === 0) {
+      return smallerInt;
     }
-  };
-
-  calcBiggerInt();
-
-  let rightAnswer;
-
-  if (biggerInt % smallerInt === 0) {
-    rightAnswer = smallerInt;
-  } else {
     for (let i = Math.floor(smallerInt / 2); i >= 1; i -= 1) {
       if (biggerInt % i === 0 && smallerInt % i === 0) {
-        rightAnswer = i;
-        break;
+        return i;
       }
     }
-  }
+    return 1;
+  };
 
-  console.log(`Question: ${firstInt} ${secondInt}`);
+  const rightAnswer = calcRightAnswer();
+  const question = `Question: ${firstInt} ${secondInt}`;
 
-  const userAnswer = readlineSync.question('Your answer: ');
-  const userAnswerStr = Number(userAnswer);
-
-  if (userAnswerStr === rightAnswer) {
-    return true;
-  }
-  console.log(
-    `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
-  );
-
-  return false;
+  return [question, rightAnswer.toString()];
 };
 
 export default (description) => launchGame(gcd, description);
