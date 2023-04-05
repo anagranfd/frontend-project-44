@@ -18,6 +18,7 @@ const launchGame = (calcFunc, description) => {
       console.log(
         `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`,
       );
+      console.log(`Let's try again, ${name}!`);
       return;
     }
     console.log('Correct!');
