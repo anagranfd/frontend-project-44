@@ -3,7 +3,9 @@ import getRandomInt from '../getRandomInt.js';
 
 const isEven = (num) => num % 2 === 0;
 
-const getData = (integer = getRandomInt(1, 100)) => {
+const getData = () => {
+  const integer = getRandomInt(1, 100);
+
   const rightAnswer = isEven(integer) ? 'yes' : 'no';
   const question = `Question: ${integer}`;
 

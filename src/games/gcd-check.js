@@ -14,10 +14,10 @@ const showRightAnswer = (int1, int2) => {
   return divisor;
 };
 
-const getData = (
-  firstInt = getRandomInt(1, 100),
-  secondInt = getRandomInt(1, 100),
-) => {
+const getData = () => {
+  const firstInt = getRandomInt(1, 100);
+  const secondInt = getRandomInt(1, 100);
+
   const rightAnswer = showRightAnswer(firstInt, secondInt);
   const question = `Question: ${firstInt} ${secondInt}`;
 

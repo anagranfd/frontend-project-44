@@ -19,7 +19,9 @@ const combineProgression = (workInt) => {
   return [uncompletedProgression, progression[missingIntIndex]];
 };
 
-const getData = (integer = getRandomInt(1, 100)) => {
+const getData = () => {
+  const integer = getRandomInt(1, 100);
+
   const [uncompletedProgression, rightAnswer] = combineProgression(integer);
   const question = `Question: ${uncompletedProgression.join(' ')}`;
 
