@@ -35,7 +35,7 @@ If the answer is incorrect, the game will end.\
 The player must answer correctly 3 times in a row.\
 After that, the game will end.
 
-### Asciibema demonstration:
+### Asciinema demonstration:
 
 [asciinema.org brain-even](https://asciinema.org/a/gJx78LPscfwkwgo4brLLHLh93)
 
