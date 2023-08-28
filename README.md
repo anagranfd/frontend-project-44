@@ -6,7 +6,7 @@
 
 <a href="https://codeclimate.com/github/anagranfd/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/04bec6574cad802cd24a/maintainability" /></a>
 
-#### Desctiption
+#### Description
 
 Brain Games - a set of five console games designed based on popular mobile brain training apps.
 
