@@ -1,5 +1,11 @@
 ## Brain-games
 
+### Hexlet tests and linter status:
+
+[![Actions Status](https://github.com/anagranfd/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/anagranfd/frontend-project-44/actions)
+
+<a href="https://codeclimate.com/github/anagranfd/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/04bec6574cad802cd24a/maintainability" /></a>
+
 #### Desctiption
 
 Brain Games - a set of five console games designed based on popular mobile brain training apps.
@@ -20,6 +26,8 @@ make install
 `brain-progression` - A series of numbers forming an arithmetic progression will be shown to the user, with one number replaced by two dots. The user needs to determine this number.\
 `brain-prime` - A random number will be shown to the user. They need to answer yes if the number is prime, or no if it is not.\
 
+**Game flow:**
+
 The game will ask the player to enter their name.\
 Then the game will ask the player a question.\
 If the answer is correct, the game will continue.\
@@ -27,11 +35,7 @@ If the answer is incorrect, the game will end.\
 The player must answer correctly 3 times in a row.\
 After that, the game will end.
 
-### Hexlet tests and linter status:
-
-[![Actions Status](https://github.com/anagranfd/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/anagranfd/frontend-project-44/actions)
-
-<a href="https://codeclimate.com/github/anagranfd/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/04bec6574cad802cd24a/maintainability" /></a>
+### Asciibema demonstration:
 
 [asciinema.org brain-even](https://asciinema.org/a/gJx78LPscfwkwgo4brLLHLh93)
 
